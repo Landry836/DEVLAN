@@ -173,15 +173,17 @@ ou de votre recherche de talents spécialisés.
 
 <h2>Envoyer une demande</h2>
 
-<form>
+<form action="https://formsubmit.co/ndebiadenis@gmail.com" method="POST">
 
-<input class="input" type="text" placeholder="Nom">
+<input type="hidden" name="_next" value="index.html">
 
-<input class="input" type="email" placeholder="Adresse email">
+<input class="input" type="text" name="nom" placeholder="Nom">
 
-<input class="input" type="text" placeholder="Entreprise">
+<input class="input" type="email" name="email" placeholder="Adresse email">
 
-<textarea class="input" placeholder="Décrivez votre besoin"></textarea>
+<input class="input" type="text" name="entreprise" placeholder="Entreprise">
+
+<textarea class="input" name="message" placeholder="Décrivez votre besoin"></textarea>
 
 <button type="submit">
 Envoyer
