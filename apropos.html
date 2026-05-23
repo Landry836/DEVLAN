@@ -1,0 +1,481 @@
+<!-- ========================= APROPOS.HTML ========================= -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>À propos - DEVLAN</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+:root{
+--bg:#04060d;
+--surface:#0b1020;
+--card:#10182d;
+--accent:#2d6bff;
+--accent2:#4f9fff;
+--white:#f4f7ff;
+--muted:#93a1c3;
+--border:rgba(255,255,255,.08);
+
+--font-head:'Syne',sans-serif;
+--font-body:'DM Sans',sans-serif;
+}
+
+body{
+background:var(--bg);
+color:var(--white);
+font-family:var(--font-body);
+overflow-x:hidden;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+.container{
+width:100%;
+max-width:1150px;
+margin:auto;
+padding:0 24px;
+}
+
+/* NAV */
+
+nav{
+position:fixed;
+top:0;
+left:0;
+right:0;
+z-index:100;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 40px;
+background:rgba(4,6,13,.8);
+backdrop-filter:blur(15px);
+border-bottom:1px solid var(--border);
+}
+
+.logo{
+font-family:var(--font-head);
+font-size:22px;
+font-weight:800;
+letter-spacing:.08em;
+}
+
+.nav-links{
+display:flex;
+gap:32px;
+list-style:none;
+}
+
+.nav-links a{
+font-size:14px;
+color:var(--muted);
+transition:.2s;
+}
+
+.nav-links a:hover{
+color:var(--white);
+}
+
+.btn{
+padding:12px 22px;
+border-radius:8px;
+background:var(--accent);
+color:white;
+font-size:14px;
+font-weight:500;
+transition:.2s;
+}
+
+.btn:hover{
+background:#1954e6;
+}
+
+/* HERO */
+
+.hero{
+padding:180px 24px 100px;
+text-align:center;
+background:
+linear-gradient(rgba(4,6,13,.8),rgba(4,6,13,.95)),
+url('images/about-bg.jpg') center/cover;
+}
+
+.label{
+color:var(--accent2);
+font-size:12px;
+letter-spacing:.2em;
+text-transform:uppercase;
+margin-bottom:18px;
+}
+
+.hero h1{
+font-family:var(--font-head);
+font-size:clamp(2.5rem,5vw,4.5rem);
+line-height:1.1;
+margin-bottom:22px;
+}
+
+.hero p{
+max-width:720px;
+margin:auto;
+font-size:17px;
+line-height:1.8;
+color:var(--muted);
+}
+
+/* STORY */
+
+.story{
+padding:100px 0;
+}
+
+.story-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.story img{
+width:100%;
+height:500px;
+object-fit:cover;
+border-radius:18px;
+}
+
+.story-text h2{
+font-family:var(--font-head);
+font-size:2.5rem;
+margin-bottom:22px;
+}
+
+.story-text p{
+color:var(--muted);
+line-height:1.9;
+margin-bottom:20px;
+}
+
+/* VALUES */
+
+.values{
+padding:100px 0;
+background:var(--surface);
+}
+
+.values-header{
+text-align:center;
+margin-bottom:70px;
+}
+
+.values-header h2{
+font-family:var(--font-head);
+font-size:2.7rem;
+margin-top:18px;
+}
+
+.values-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:24px;
+}
+
+.value-card{
+background:var(--card);
+border:1px solid var(--border);
+padding:40px 30px;
+border-radius:18px;
+transition:.25s;
+}
+
+.value-card:hover{
+transform:translateY(-6px);
+border-color:rgba(45,107,255,.4);
+}
+
+.value-card h3{
+font-family:var(--font-head);
+margin-bottom:16px;
+font-size:1.3rem;
+}
+
+.value-card p{
+color:var(--muted);
+line-height:1.8;
+}
+
+/* CTA */
+
+.cta{
+padding:120px 24px;
+text-align:center;
+}
+
+.cta h2{
+font-family:var(--font-head);
+font-size:3rem;
+margin-bottom:20px;
+}
+
+.cta p{
+max-width:650px;
+margin:auto;
+line-height:1.9;
+color:var(--muted);
+margin-bottom:35px;
+}
+
+/* FOOTER */
+
+footer{
+border-top:1px solid var(--border);
+padding:40px 24px;
+text-align:center;
+background:var(--surface);
+}
+
+footer p{
+color:var(--muted);
+font-size:14px;
+}
+
+/* ANIM */
+
+.fade{
+opacity:0;
+transform:translateY(30px);
+transition:.8s;
+}
+
+.fade.visible{
+opacity:1;
+transform:translateY(0);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.story-grid{
+grid-template-columns:1fr;
+}
+
+.values-grid{
+grid-template-columns:1fr;
+}
+
+nav{
+padding:18px 24px;
+}
+
+.nav-links{
+display:none;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="logo">DEVLAN</div>
+
+<ul class="nav-links">
+<li><a href="index.html">Accueil</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="profils.html">Profils</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+
+<a href="contact.html" class="btn">Nous contacter</a>
+</nav>
+
+<section class="hero">
+
+<p class="label fade">À propos de DEVLAN</p>
+
+<h1 class="fade">
+Nous connectons les entreprises
+aux meilleurs talents tech.
+</h1>
+
+<p class="fade">
+DEVLAN accompagne les startups,
+PME et grandes entreprises dans
+la recherche de développeurs,
+designers et experts data capables
+d'accélérer leur croissance.
+</p>
+
+</section>
+
+<section class="story">
+<div class="container">
+
+<div class="story-grid">
+
+<img class="fade" src="images/photo.jpg"
+onerror="this.style='background:linear-gradient(135deg,#10234d,#2d6bff);height:500px'">
+
+<div class="story-text fade">
+
+<p class="label">Notre histoire</p>
+
+<h2>Une vision moderne du recrutement technologique</h2>
+
+<p>
+Face à la pénurie mondiale de talents numériques,
+nous avons créé DEVLAN avec une mission simple :
+rendre le recrutement tech plus rapide,
+plus humain et plus performant.
+</p>
+
+<p>
+Nos équipes évaluent chaque profil selon
+des critères techniques, humains et stratégiques
+afin d'assurer une parfaite compatibilité
+avec les besoins des entreprises.
+</p>
+
+<p>
+Aujourd'hui, DEVLAN accompagne des entreprises
+dans toute l'Europe sur des projets
+web, mobile, cloud, cybersécurité
+et intelligence artificielle.
+</p>
+
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section class="values">
+
+<div class="container">
+
+<div class="values-header fade">
+
+<p class="label">Nos valeurs</p>
+
+<h2>Ce qui nous différencie</h2>
+
+</div>
+
+<div class="values-grid">
+
+<div class="value-card fade">
+
+<h3>Excellence technique</h3>
+
+<p>
+Chaque candidat passe des évaluations
+techniques approfondies afin de garantir
+un niveau d'expertise élevé.
+</p>
+
+</div>
+
+<div class="value-card fade">
+
+<h3>Accompagnement humain</h3>
+
+<p>
+Nous privilégions des relations durables
+avec nos clients et nos talents grâce
+à un suivi personnalisé.
+</p>
+
+</div>
+
+<div class="value-card fade">
+
+<h3>Réactivité</h3>
+
+<p>
+Nos processus rapides permettent
+de réduire fortement les délais
+de recrutement.
+</p>
+
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section class="cta">
+
+<h2 class="fade">
+Construisons vos équipes de demain.
+</h2>
+
+<p class="fade">
+Que vous recherchiez un développeur,
+un designer ou un expert cloud,
+DEVLAN vous accompagne à chaque étape.
+</p>
+
+<a href="contact.html" class="btn fade">
+Parler à un expert
+</a>
+
+</section>
+
+<footer>
+<p>© 2026 DEVLAN — Tous droits réservés.</p>
+</footer>
+
+<script>
+
+const observer = new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("visible");
+
+}
+
+});
+
+},{threshold:.15});
+
+document.querySelectorAll(".fade").forEach(el=>{
+observer.observe(el);
+});
+
+window.addEventListener("scroll",()=>{
+
+document.querySelector("nav").style.boxShadow=
+window.scrollY > 10
+? "0 5px 30px rgba(0,0,0,.4)"
+: "none";
+
+});
+
+</script>
+
+</body>
+</html>

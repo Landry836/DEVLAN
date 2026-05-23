@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DEVLAN – Votre partenaire de croissance technologique</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── RESET & BASE ─────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --bg:        #04060d;
+      --surface:   #0a0e1a;
+      --card:      #0d1120;
+      --accent:    #2d6bff;
+      --accent2:   #4f9fff;
+      --white:     #f0f4ff;
+      --muted:     #6b7a9a;
+      --border:    rgba(255,255,255,0.07);
+      --font-head: 'Syne', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img { display: block; max-width: 100%; }
+    a   { text-decoration: none; color: inherit; }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .label {
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent2);
+    }
+
+    /* ─── NAV ───────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 18px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(4,6,13,0.75);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo img {
+      height: 42px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--muted);
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+
+    .nav-cta {
+      display: flex;
+      gap: 12px;
+    }
+
+    .btn {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 500;
+      padding: 10px 22px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all .2s;
+      border: none;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: var(--white);
+    }
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent2);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+    .btn-primary:hover {
+      background: #1a57f0;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: all .3s;
+    }
+
+    /* ─── HERO ──────────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 48px;
+      padding: 120px 40px 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .hero-text h1 {
+      font-family: var(--font-head);
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      color: var(--white);
+    }
+
+    .hero-text h1 em {
+      font-style: normal;
+      color: var(--accent2);
+    }
+
+    .hero-text p {
+      font-size: 15px;
+      color: var(--muted);
+      max-width: 460px;
+      margin-bottom: 36px;
+      line-height: 1.75;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .hero-image {
+      position: relative;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      border-radius: 16px;
+    }
+
+    .hero-image::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: 17px;
+      background: linear-gradient(135deg, var(--accent) 0%, transparent 60%);
+      z-index: -1;
+      opacity: .6;
+    }
+
+    /* ─── MÉTHODE ───────────────────────────────────────── */
+    .methode {
+      padding: 100px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .methode .label { margin-bottom: 20px; }
+
+    .methode h2 {
+      font-family: var(--font-head);
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 800;
+      max-width: 700px;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .methode p {
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 560px;
+      line-height: 1.75;
+    }
+
+    /* ─── SERVICES ──────────────────────────────────────── */
+    .services {
+      padding: 100px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .services-left .label { margin-bottom: 16px; }
+
+    .services-left > p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 40px;
+      line-height: 1.75;
+    }
+
+    .services-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .services-list li {
+      font-family: var(--font-head);
+      font-size: 1.1rem;
+      font-weight: 700;
+      padding: 22px 0;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      cursor: default;
+      transition: color .2s;
+    }
+    .services-list li:last-child { border-bottom: 1px solid var(--border); }
+    .services-list li:hover { color: var(--accent2); }
+
+    .services-list li::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .services-cta { margin-top: 36px; }
+
+    .services-right img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 14px;
+    }
+
+    /* ─── MARQUEE ───────────────────────────────────────── */
+    .marquee-wrap {
+      overflow: hidden;
+      padding: 22px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .marquee-track {
+      display: flex;
+      gap: 64px;
+      width: max-content;
+      animation: marquee 22s linear infinite;
+    }
+
+    .marquee-track span {
+      font-family: var(--font-head);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .marquee-track span em {
+      font-style: normal;
+      color: var(--accent2);
+      margin: 0 8px;
+    }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ─── TÉMOIGNAGES ───────────────────────────────────── */
+    .temoignages {
+      padding: 100px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .temoignages-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .temoignages-header .label { margin-bottom: 16px; }
+
+    .temoignages-header h2 {
+      font-family: var(--font-head);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .temoignages-header p {
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 440px;
+      margin: 0 auto;
+    }
+
+    .temoignages-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .temoignage-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px 22px;
+      transition: border-color .25s, transform .25s;
+    }
+    .temoignage-card:hover {
+      border-color: rgba(45,107,255,.35);
+      transform: translateY(-4px);
+    }
+
+    .temoignage-photo {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 16px;
+      border: 2px solid var(--accent);
+    }
+
+    /* Placeholder si pas de photo */
+    .temoignage-photo-placeholder {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1a2a4a, #2d6bff33);
+      border: 2px solid var(--accent);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 20px;
+      color: var(--accent2);
+    }
+
+    .temoignage-name {
+      font-family: var(--font-head);
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .temoignage-role {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .temoignage-quote {
+      font-size: 13.5px;
+      color: #b0bdd8;
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    /* ─── ENGAGEMENT ────────────────────────────────────── */
+    .engagement {
+      padding: 100px 40px;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .engagement .label { margin-bottom: 16px; }
+
+    .engagement h2 {
+      font-family: var(--font-head);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .engagement p {
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 520px;
+      margin: 0 auto 48px;
+      line-height: 1.75;
+    }
+
+    .engagement-logo img {
+      height: 100px;
+      margin: 0 auto;
+      filter: drop-shadow(0 0 30px rgba(45,107,255,.5));
+    }
+
+    /* ─── FOOTER ────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 60px 40px 36px;
+      background: var(--surface);
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 56px;
+    }
+
+    .footer-brand img {
+      height: 44px;
+      margin-bottom: 16px;
+    }
+
+    .footer-brand p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 220px;
+    }
+
+    .footer-col h4 {
+      font-family: var(--font-head);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      color: var(--white);
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-col ul a {
+      font-size: 13.5px;
+      color: var(--muted);
+      transition: color .2s;
+    }
+    .footer-col ul a:hover { color: var(--white); }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border);
+      padding-top: 28px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-bottom p {
+      font-size: 12.5px;
+      color: var(--muted);
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-socials a {
+      font-size: 12.5px;
+      color: var(--muted);
+      transition: color .2s;
+    }
+    .footer-socials a:hover { color: var(--white); }
+
+    /* ─── RESPONSIVE ────────────────────────────────────── */
+    @media (max-width: 960px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 100px 24px 60px;
+        text-align: center;
+      }
+      .hero-text p { margin: 0 auto 32px; }
+      .hero-btns { justify-content: center; }
+      .hero-image img { height: 340px; }
+
+      .services {
+        grid-template-columns: 1fr;
+        padding: 60px 24px;
+        gap: 48px;
+      }
+      .services-right img { height: 320px; }
+
+      .temoignages-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      nav { padding: 14px 20px; }
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 65px; left: 0; right: 0;
+        background: rgba(4,6,13,.97);
+        backdrop-filter: blur(14px);
+        padding: 28px 24px;
+        gap: 24px;
+        border-bottom: 1px solid var(--border);
+      }
+      .nav-cta.open {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: calc(65px + 160px); left: 0; right: 0;
+        background: rgba(4,6,13,.97);
+        padding: 0 24px 28px;
+        gap: 10px;
+        border-bottom: 1px solid var(--border);
+      }
+      .nav-cta.open .btn { width: 100%; text-align: center; }
+
+      .methode { padding: 60px 24px; }
+
+      .temoignages { padding: 60px 24px; }
+      .temoignages-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .engagement { padding: 60px 24px; }
+
+      footer { padding: 48px 24px 28px; }
+      .footer-top {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    /* ─── ANIMATIONS ────────────────────────────────────── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ NAV ═══════════════════════════════════════════════ -->
+  <nav id="navbar">
+    <a class="nav-logo" href="#">
+      <!--
+        REMPLACE ICI : mets le chemin vers ton logo
+        Exemple : <img src="images/logo.png" alt="ALTATECH" />
+        Si t'as pas de logo image, garde le texte ci-dessous
+      -->
+      <img src="images/devlan.jpeg" alt="devlan"
+           onerror="this.outerHTML='<span style=\'font-family:Syne,sans-serif;font-weight:800;font-size:20px;letter-spacing:.08em\'>ALTATECH</span>'" />
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="apropos.html">Notre méthode</a></li>
+      <li><a href="services.html">Nos services</a></li>
+      <li><a href="temoignages.html">Témoignages</a></li>
+      <li><a href="apropos.html">À propos</a></li>
+    </ul>
+
+    <div class="nav-cta" id="navCta">
+      <a href="profils.html "class= "btn btn-outline">Nos profils</a>
+      <a href="contact.html" class="btn btn-primary">Nous contacter</a>
+    </div>
+
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ══ HERO ══════════════════════════════════════════════ -->
+  <section>
+    <div class="hero">
+      <div class="hero-text fade-in">
+        <h1>
+          "Propulsez votre entreprise avec les <em>meilleurs talents</em> de demain"
+        </h1>
+        <p>
+          Nous dénichons, évaluons et intégrons les profils de développeurs,
+          designers et data scientists les plus qualifiés pour vos équipes.
+        </p>
+        <div class="hero-btns">
+          <a href="profils.html" class="btn btn-outline">Découvrir nos profils</a>
+          <a href="#contact" class="btn btn-primary">Nous contacter</a>
+        </div>
+      </div>
+
+      <div class="hero-image fade-in" style="transition-delay:.15s">
+        <!--
+          REMPLACE ICI : ton image hero (l'homme avec l'ordinateur)
+          Exemple : <img src="images/hero.jpg" alt="Talent tech" />
+        -->
+        <img src="images/devlan.jpeg" alt="Talent tech"
+             onerror="this.style='height:520px;border-radius:16px;background:linear-gradient(135deg,#0d1632,#1a3a7a);display:block'" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ MÉTHODE ═══════════════════════════════════════════ -->
+  <section id="methode" style="background: var(--surface);">
+    <div class="methode fade-in">
+      <p class="label">Notre méthode</p>
+      <h2>Votre chemin vers le poste idéal en télétravail dans le secteur technologique</h2>
+      <p style="margin-top:20px;">
+        Trouvez les meilleurs experts de la technologie et propulsez vos projets
+        grâce à notre processus de sélection rigoureux et accéléré.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══ MARQUEE ════════════════════════════════════════════ -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <!-- Dupliqué pour boucle infinie -->
+      <span>Propulsez votre croissance <em>✦</em> avec DEVLAN</span>
+      <span>Propulsez votre croissance <em>✦</em> avec DEVLAN</span>
+      <span>Propulsez votre croissance <em>✦</em> avec DEVLAN</span>
+      <span>Propulsez votre croissance <em>✦</em> avec DEVLAN</span>
+      <span>Propulsez votre croissance <em>✦</em> avec DEVLAN</span>
+      <span>Propulsez votre croissance <em>✦</em> avec DEVLAN</span>
+      <span>Propulsez votre croissance <em>✦</em> avec DEVLAN</span>
+      <span>Propulsez votre croissance <em>✦</em> avec DEVLAN</span>
+    </div>
+  </div>
+
+  <!-- ══ SERVICES ══════════════════════════════════════════ -->
+  <section id="services">
+    <div class="services">
+      <div class="services-left fade-in">
+        <p class="label">Nos services</p>
+        <p>
+          Nous savons que trouver le bon profil tech est un défi de taille.
+          C'est pourquoi nous sélectionnons rigoureusement chaque expert
+          avant de vous le présenter.
+        </p>
+        <ul class="services-list">
+          <li>Diffusion &amp; Sourcing ciblé</li>
+          <li>Entretiens &amp; Tests techniques</li>
+          <li>Suivi de l'intégration</li>
+          <li>Diversifier le recrutement</li>
+        </ul>
+        <div class="services-cta">
+          <a href="contact.html" class="btn btn-primary">Nous confier un recrutement</a>
+        </div>
+      </div>
+
+      <div class="services-right fade-in" style="transition-delay:.15s">
+        <!--
+          REMPLACE ICI : image de la section services
+          Exemple : <img src="images/services.jpg" alt="Recrutement tech" />
+        -->
+        <img src="images/hero.png" alt="Recrutement tech"
+             onerror="this.style='height:500px;border-radius:14px;background:linear-gradient(160deg,#0d1632,#1a3a7a);display:block'" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TÉMOIGNAGES ═══════════════════════════════════════ -->
+  <section id="temoignages" style="background: var(--surface);">
+    <div class="temoignages">
+      <div class="temoignages-header fade-in">
+        <p class="label">Témoignages</p>
+        <h2>ils propulsent leur croissance avec nous.</h2>
+        <p>Découvrez les retours d'expérience des entreprises et des experts
+           qui nous font confiance au quotidien</p>
+      </div>
+
+      <div class="temoignages-grid">
+
+        <!-- ── TÉMOIGNAGE 1 ── -->
+        <div class="temoignage-card fade-in">
+          <!--
+            REMPLACE "images/sophie.jpg" par le chemin de ta photo
+            Si pas de photo, supprime la balise img et garde la div placeholder
+          -->
+          <img class="temoignage-photo"
+               src="images/car.jpeg"
+               alt="Sophie Leroux"
+               onerror="this.outerHTML='<div class=\'temoignage-photo-placeholder\'>SL</div>'" />
+          <p class="temoignage-name">Sophie Leroux</p>
+          <p class="temoignage-role">Directrice RH – Abstract Studio</p>
+          <p class="temoignage-quote">
+            "Le processus de sélection est ultra-rigoureux. Les candidats présentés
+            correspondent exactement à nos attentes techniques et humaines."
+          </p>
+        </div>
+
+        <!-- ── TÉMOIGNAGE 2 ── -->
+        <div class="temoignage-card fade-in" style="transition-delay:.1s">
+          <img class="temoignage-photo"
+               src="images/alex dupain.jpeg"
+               alt="Alex Dupain"
+               onerror="this.outerHTML='<div class=\'temoignage-photo-placeholder\'>AD</div>'" />
+          <p class="temoignage-name">Alex Dupain</p>
+          <p class="temoignage-role">CTO – Creative Studios</p>
+          <p class="temoignage-quote">
+            "Une efficacité redoutable. Nous cherchions un développeur Full-Stack
+            depuis des semaines, DEVLAN nous a trouvé le profil idéal en 3 jours."
+          </p>
+        </div>
+
+        <!-- ── TÉMOIGNAGE 3 ── -->
+        <div class="temoignage-card fade-in" style="transition-delay:.2s">
+          <img class="temoignage-photo"
+               src="images/siolfue.jpeg"
+               alt="Lucie Moreau"
+               onerror="this.outerHTML='<div class=\'temoignage-photo-placeholder\'>LM</div>'" />
+          <p class="temoignage-name">Lucie Moreau</p>
+          <p class="temoignage-role">Développeuse mobile freelance</p>
+          <p class="temoignage-quote">
+            "Grâce à DEVLAN, j'ai décroché une mission à forte valeur ajoutée
+            en moins d'une semaine. Le suivi de l'équipe est irréprochable."
+          </p>
+        </div>
+
+        <!-- ── TÉMOIGNAGE 4 ── -->
+        <div class="temoignage-card fade-in" style="transition-delay:.3s">
+          <img class="temoignage-photo"
+               src="images/lee chwan.jpeg"
+               alt="Lee Chwan"
+               onerror="this.outerHTML='<div class=\'temoignage-photo-placeholder\'>LC</div>'" />
+          <p class="temoignage-name">Lee Chwan</p>
+          <p class="temoignage-role">Fondateur – ABC Solutions</p>
+          <p class="temoignage-quote">
+            "Externaliser notre sourcing technique chez eux nous a fait gagner
+            un temps précieux. Je recommande les yeux fermés et sans hésiter."
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ ENGAGEMENT ════════════════════════════════════════ -->
+  <section id="engagement">
+    <div class="engagement fade-in">
+      <p class="label">Notre engagement</p>
+      <h2>Un accompagnement humain.</h2>
+      <p>
+        Parce que chaque PME est unique, nous mettons à votre disposition
+        un interlocuteur unique spécialisé dans la Tech pour suivre votre
+        recrutement de A à Z.
+      </p>
+      <div class="engagement-logo">
+        <img src="images/devlan.jpeg" alt="DEVLAN"
+             onerror="this.outerHTML='<p style=\'font-family:Syne,sans-serif;font-weight:800;font-size:28px;letter-spacing:.1em;color:var(--accent2)\'>ALTATECH</p>'" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ════════════════════════════════════════════ -->
+  <footer id="contact">
+    <div class="footer-inner">
+      <div class="footer-top">
+
+        <div class="footer-brand">
+          <img src="images/logo.png" alt="DEVLAN"
+               onerror="this.outerHTML='<p style=\'font-family:Syne,sans-serif;font-weight:800;font-size:20px;letter-spacing:.08em;margin-bottom:12px\'>DEVLAN</p>'" />
+          <p>Votre partenaire de croissance technologique</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="apropos.html">Notre méthode</a></li>
+            <li><a href="services.html">Nos services</a></li>
+            <li><a href="#temoignages">Témoignages</a></li>
+            <li><a href="apropos.html">À propos</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="recrutement.html">Recrutement</a></li>
+            <li><a href="profils.html">Nos profils</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="actualites.html">Actualités</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Légal</h4>
+          <ul>
+            <li><a href="Mentions légales.html">Mentions légales</a></li>
+            <li><a href="Confidentialité.html">Confidentialité</a></li>
+            <li><a href="https://x.com" target="_blank">X (Twitter)</a></li>
+            <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+            <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 DEVLAN. Tous droits réservés.</p>
+        <div class="footer-socials">
+          <a href="https://x.com" target="_blank">Twitter / X</a>
+          <a href="https://instagram.com" target="_blank">Instagram</a>
+          <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══ JS ════════════════════════════════════════════════ -->
+  <script>
+    // ── Hamburger menu mobile ──
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('navLinks');
+    const navCta    = document.getElementById('navCta');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      navCta.classList.toggle('open');
+    });
+
+    // ── Scroll animations (IntersectionObserver) ──
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // ── Navbar shadow au scroll ──
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').style.boxShadow =
+        window.scrollY > 10 ? '0 4px 30px rgba(0,0,0,.4)' : 'none';
+    });
+  </script>
+
+</body>
+</html>

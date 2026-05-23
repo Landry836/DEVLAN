@@ -1,0 +1,164 @@
+<!-- ========================= SERVICES.HTML ========================= -->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Services - DEVLAN</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:#05070f;
+color:white;
+font-family:'DM Sans',sans-serif;
+}
+
+.hero{
+padding:180px 24px 120px;
+text-align:center;
+background:linear-gradient(rgba(5,7,15,.8),rgba(5,7,15,.95)),
+url('images/services-bg.jpg') center/cover;
+}
+
+.hero h1{
+font-family:'Syne',sans-serif;
+font-size:4.5rem;
+margin-bottom:25px;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+line-height:1.9;
+color:#a9b7d8;
+}
+
+.container{
+max-width:1150px;
+margin:auto;
+padding:100px 24px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:30px;
+}
+
+.card{
+background:#0d1324;
+padding:45px;
+border-radius:22px;
+border:1px solid rgba(255,255,255,.08);
+transition:.25s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+border-color:rgba(45,107,255,.5);
+}
+
+.card h2{
+font-family:'Syne',sans-serif;
+margin-bottom:18px;
+}
+
+.card p{
+color:#a4b2d1;
+line-height:1.9;
+}
+
+footer{
+padding:40px;
+text-align:center;
+border-top:1px solid rgba(255,255,255,.08);
+color:#8e9bbc;
+}
+
+@media(max-width:900px){
+
+.grid{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:3rem;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+<h1>Nos services technologiques</h1>
+
+<p>
+DEVLAN accompagne les entreprises
+dans le recrutement et l'intégration
+des meilleurs talents numériques.
+</p>
+
+</section>
+
+<div class="container">
+
+<div class="grid">
+
+<div class="card">
+<h2>Développement Web</h2>
+<p>
+Recrutement de développeurs React,
+Node.js, Next.js, Python et Java.
+</p>
+</div>
+
+<div class="card">
+<h2>Développement Mobile</h2>
+<p>
+Experts iOS, Android,
+Flutter et React Native.
+</p>
+</div>
+
+<div class="card">
+<h2>Cybersécurité</h2>
+<p>
+Pentesters, analystes SOC
+et experts sécurité cloud.
+</p>
+</div>
+
+<div class="card">
+<h2>Intelligence Artificielle</h2>
+<p>
+Ingénieurs IA, Machine Learning
+et Data Science.
+</p>
+</div>
+
+</div>
+
+</div>
+
+<footer>
+© 2026 DEVLAN — Services
+</footer>
+
+</body>
+</html>

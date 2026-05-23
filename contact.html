@@ -1,0 +1,226 @@
+<!-- ========================= CONTACT.HTML ========================= -->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact - DEVLAN</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:#04060d;
+color:#f5f7ff;
+font-family:'DM Sans',sans-serif;
+}
+
+nav{
+position:fixed;
+top:0;
+left:0;
+right:0;
+padding:20px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(4,6,13,.85);
+backdrop-filter:blur(15px);
+border-bottom:1px solid rgba(255,255,255,.08);
+z-index:100;
+}
+
+.logo{
+font-family:'Syne',sans-serif;
+font-size:22px;
+font-weight:800;
+}
+
+.container{
+max-width:1150px;
+margin:auto;
+padding:160px 24px 100px;
+}
+
+.hero{
+text-align:center;
+margin-bottom:70px;
+}
+
+.hero h1{
+font-family:'Syne',sans-serif;
+font-size:4rem;
+margin-bottom:20px;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+line-height:1.9;
+color:#a6b4d3;
+}
+
+.contact-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+}
+
+.card{
+background:#0d1324;
+border:1px solid rgba(255,255,255,.08);
+padding:40px;
+border-radius:20px;
+}
+
+.card h2{
+font-family:'Syne',sans-serif;
+margin-bottom:25px;
+}
+
+.input{
+width:100%;
+padding:16px;
+background:#131b31;
+border:none;
+border-radius:10px;
+margin-bottom:18px;
+color:white;
+}
+
+textarea{
+min-height:150px;
+resize:none;
+}
+
+button{
+padding:15px 28px;
+background:#2d6bff;
+border:none;
+border-radius:10px;
+color:white;
+cursor:pointer;
+font-weight:600;
+transition:.2s;
+}
+
+button:hover{
+background:#1f58e3;
+}
+
+.info p{
+margin-bottom:20px;
+color:#a6b4d3;
+line-height:1.8;
+}
+
+footer{
+padding:40px;
+text-align:center;
+border-top:1px solid rgba(255,255,255,.08);
+color:#8e9bbc;
+margin-top:100px;
+}
+
+@media(max-width:900px){
+
+.contact-grid{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:3rem;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="logo">DEVLAN</div>
+</nav>
+
+<div class="container">
+
+<div class="hero">
+
+<h1>Contactez nos experts</h1>
+
+<p>
+Parlez-nous de vos besoins en recrutement,
+de vos projets technologiques
+ou de votre recherche de talents spécialisés.
+</p>
+
+</div>
+
+<div class="contact-grid">
+
+<div class="card">
+
+<h2>Envoyer une demande</h2>
+
+<form>
+
+<input class="input" type="text" placeholder="Nom">
+
+<input class="input" type="email" placeholder="Adresse email">
+
+<input class="input" type="text" placeholder="Entreprise">
+
+<textarea class="input" placeholder="Décrivez votre besoin"></textarea>
+
+<button type="submit">
+Envoyer
+</button>
+
+</form>
+
+</div>
+
+<div class="card info">
+
+<h2>Informations</h2>
+
+<p>
+📍 Amiens, France
+</p>
+
+<p>
+📧 contact@devlan.fr
+</p>
+
+<p>
+📞 +33 7 436 706 56
+</p>
+
+<p>
+Nos équipes répondent sous 24h
+afin de vous accompagner rapidement.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+© 2026 DEVLAN — Contact
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,354 @@
+<!-- ========================= RECRUTEMENT.HTML ========================= -->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Recrutement - DEVLAN</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:#04060d;
+color:#f5f7ff;
+font-family:'DM Sans',sans-serif;
+overflow-x:hidden;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+nav{
+position:fixed;
+top:0;
+left:0;
+right:0;
+padding:20px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(4,6,13,.85);
+backdrop-filter:blur(15px);
+border-bottom:1px solid rgba(255,255,255,.08);
+z-index:100;
+}
+
+.logo{
+font-family:'Syne',sans-serif;
+font-size:22px;
+font-weight:800;
+}
+
+.btn{
+padding:12px 24px;
+background:#2d6bff;
+border-radius:8px;
+font-size:14px;
+font-weight:500;
+transition:.2s;
+}
+
+.btn:hover{
+background:#1f58e3;
+}
+
+.hero{
+padding:180px 24px 120px;
+text-align:center;
+background:
+linear-gradient(rgba(4,6,13,.85),rgba(4,6,13,.95)),
+url('images/recruitment.jpg') center/cover;
+}
+
+.hero h1{
+font-family:'Syne',sans-serif;
+font-size:clamp(2.7rem,5vw,4.8rem);
+line-height:1.1;
+margin-bottom:25px;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+font-size:18px;
+line-height:1.9;
+color:#a9b7d8;
+}
+
+.container{
+max-width:1150px;
+margin:auto;
+padding:0 24px;
+}
+
+.process{
+padding:110px 0;
+}
+
+.process-header{
+text-align:center;
+margin-bottom:70px;
+}
+
+.process-header h2{
+font-family:'Syne',sans-serif;
+font-size:2.8rem;
+margin-bottom:18px;
+}
+
+.process-header p{
+color:#9ba8c7;
+}
+
+.steps{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:24px;
+}
+
+.step{
+background:#0d1324;
+border:1px solid rgba(255,255,255,.08);
+padding:40px 28px;
+border-radius:18px;
+transition:.25s;
+}
+
+.step:hover{
+transform:translateY(-6px);
+border-color:rgba(45,107,255,.4);
+}
+
+.number{
+font-size:14px;
+color:#4f9fff;
+margin-bottom:18px;
+letter-spacing:.2em;
+}
+
+.step h3{
+font-family:'Syne',sans-serif;
+margin-bottom:16px;
+font-size:1.3rem;
+}
+
+.step p{
+color:#9eabc8;
+line-height:1.8;
+}
+
+.cta{
+padding:120px 24px;
+text-align:center;
+background:#0a0f1d;
+}
+
+.cta h2{
+font-family:'Syne',sans-serif;
+font-size:3rem;
+margin-bottom:22px;
+}
+
+.cta p{
+max-width:650px;
+margin:auto;
+color:#9eabc8;
+line-height:1.9;
+margin-bottom:35px;
+}
+
+footer{
+padding:40px;
+text-align:center;
+border-top:1px solid rgba(255,255,255,.08);
+color:#8f9bbb;
+}
+
+.fade{
+opacity:0;
+transform:translateY(30px);
+transition:.8s;
+}
+
+.fade.visible{
+opacity:1;
+transform:translateY(0);
+}
+
+@media(max-width:950px){
+
+.steps{
+grid-template-columns:1fr;
+}
+
+.hero{
+padding-top:160px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">DEVLAN</div>
+
+<a href="contact.html" class="btn">
+Lancer un recrutement
+</a>
+
+</nav>
+
+<section class="hero">
+
+<h1 class="fade">
+Recrutez les meilleurs talents tech.
+</h1>
+
+<p class="fade">
+DEVLAN identifie, sélectionne et intègre
+des profils hautement qualifiés
+pour accélérer vos projets numériques.
+</p>
+
+</section>
+
+<section class="process">
+
+<div class="container">
+
+<div class="process-header fade">
+
+<h2>Notre processus de recrutement</h2>
+
+<p>
+Une méthodologie rapide, humaine et rigoureuse.
+</p>
+
+</div>
+
+<div class="steps">
+
+<div class="step fade">
+
+<p class="number">01</p>
+
+<h3>Analyse du besoin</h3>
+
+<p>
+Nous définissons précisément
+vos attentes techniques,
+vos objectifs et votre culture d'entreprise.
+</p>
+
+</div>
+
+<div class="step fade">
+
+<p class="number">02</p>
+
+<h3>Sourcing avancé</h3>
+
+<p>
+Nos recruteurs identifient
+les meilleurs profils disponibles
+sur le marché tech.
+</p>
+
+</div>
+
+<div class="step fade">
+
+<p class="number">03</p>
+
+<h3>Évaluations techniques</h3>
+
+<p>
+Chaque candidat est testé
+sur ses compétences réelles
+et sa capacité à travailler en équipe.
+</p>
+
+</div>
+
+<div class="step fade">
+
+<p class="number">04</p>
+
+<h3>Intégration</h3>
+
+<p>
+Nous accompagnons l'intégration
+du talent afin d'assurer
+une collaboration durable.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="cta">
+
+<h2 class="fade">
+Accélérez votre croissance.
+</h2>
+
+<p class="fade">
+Trouvez rapidement les profils
+qui feront évoluer votre entreprise.
+</p>
+
+<a href="contact.html" class="btn fade">
+Contacter DEVLAN
+</a>
+
+</section>
+
+<footer>
+© 2026 DEVLAN — Recrutement Tech
+</footer>
+
+<script>
+
+const observer = new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("visible");
+
+}
+
+});
+
+},{threshold:.15});
+
+document.querySelectorAll(".fade").forEach(el=>{
+observer.observe(el);
+});
+
+</script>
+
+</body>
+</html>
