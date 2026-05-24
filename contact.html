@@ -175,20 +175,22 @@ ou de votre recherche de talents spécialisés.
 
 <form
   id="contact-form"
-  action="https://formspree.io/f/qnlvbq"
+  action="https://formspree.io/f/mpqnlvbq"
   method="POST"
   accept-charset="UTF-8"
   novalidate
 >
 
-<input type="hidden" name="subject" value="Nouvelle demande — DEVLAN Contact">
-<input type="text" name="_gotcha" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
+<input type="hidden" name="_subject" value="Nouvelle demande — DEVLAN Contact">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_next" id="formsubmit-next" value="">
+<input type="text" name="_honey" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
 
-<input class="input" type="text" name="name" placeholder="Nom" autocomplete="name">
+<input class="input" type="text" name="nom" placeholder="Nom" autocomplete="name">
 
 <input class="input" type="email" name="email" placeholder="Adresse email" autocomplete="email">
 
-<input class="input" type="text" name="company" placeholder="Entreprise" autocomplete="organization">
+<input class="input" type="text" name="entreprise" placeholder="Entreprise" autocomplete="organization">
 
 <textarea class="input" name="message" placeholder="Décrivez votre besoin"></textarea>
 
@@ -229,6 +231,18 @@ afin de vous accompagner rapidement.
 © 2026 DEVLAN — Contact
 </footer>
 
+<script>
+/* Définit l'URL absolue de redirection (_next) — ne bloque pas l'envoi du formulaire */
+(function () {
+  var next = document.getElementById('formsubmit-next');
+  if (!next) return;
+  try {
+    next.value = new URL('index.html', window.location.href).href;
+  } catch (e) {
+    next.value = 'index.html';
+  }
+})();
+</script>
 
 </body>
 </html>
